@@ -16,6 +16,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@master
+    - name: List 
       run: |
         ls -la
 #    - run: git lfs pull
