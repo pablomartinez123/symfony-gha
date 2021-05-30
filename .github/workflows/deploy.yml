@@ -20,6 +20,9 @@ jobs:
       run: |
         cd www
         composer install
+    - name: Test PHP version
+      run: |
+        php -i
     - name: Run tests
       run: |
         cd www
