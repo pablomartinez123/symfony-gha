@@ -41,7 +41,7 @@ jobs:
         context: .
         file: docker/php-fpm/Dockerfile
         push: true
-        tags: pablomartinez123/symfony-gha:latest
+        tags: pablomartinez123/symfony-gha:${{ github.sha }}
 #    - name: SSH Remote Commands
 #      uses: appleboy/ssh-action@v0.1.3
 #      with:
