@@ -24,7 +24,7 @@ jobs:
     - name: Build and push to docker
       uses: docker/build-push-action@v2
       with:
-        file: docker/Dockerfile/php-fpm
+        file: docker/php-fpm
         push: true
         tags: ${{ github.sha }}
 #    - name: SSH Remote Commands
