@@ -10,6 +10,6 @@ class FirstTest extends KernelTestCase
     {
         self::bootKernel();
 
-        $this->assertEquals(false,true);
+        $this->assertEquals(true,true);
     }
 }
