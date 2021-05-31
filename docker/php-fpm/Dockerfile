@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+
 COPY ./www /var/www
 
 #VOLUME ["/var/www"]
