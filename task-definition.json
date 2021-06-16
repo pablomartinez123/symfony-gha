@@ -34,7 +34,7 @@
         }
       ],
       "stopTimeout": null,
-      "image": "nginx:1.20-alpine",
+      "image": "",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": [
@@ -98,7 +98,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "pablomartinez123/symfony-gha",
+      "image": "",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,

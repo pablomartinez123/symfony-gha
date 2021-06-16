@@ -81,10 +81,26 @@ jobs:
 #        container-name: my-container
 #        image: ${{ steps.build-image.outputs.image }}
 
+    - name: Render Amazon ECS task definition for NGINX
+      id: render-web-container
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: task-definition.json
+        container-name: nginx
+        image: nginx:1.20-alpine
+
+    - name: Modify Amazon ECS task definition with PHP-FPM
+      id: render-app-container
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ steps.render-web-container.outputs.task-definition }}
+        container-name: php-fpm
+        image: pablomartinez123/symfony-gha
+
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: task-definition.json
+        task-definition: ${{ steps.render-app-container.outputs.task-definition }}
         service: serviceTest
         cluster: test
         force-new-deployment: true
