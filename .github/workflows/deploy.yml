@@ -87,5 +87,5 @@ jobs:
         task-definition: task-definition.json
         service: serviceTest
         cluster: test
-	force-new-deployment: true
+        force-new-deployment: true
 #        wait-for-service-stability: true
