@@ -84,7 +84,7 @@ jobs:
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: symfony-gha:27
+        task-definition: symfony-gha-27.json
         service: serviceTest
         cluster: test
         wait-for-service-stability: true
