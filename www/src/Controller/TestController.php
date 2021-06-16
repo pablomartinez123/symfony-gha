@@ -12,6 +12,6 @@ class TestController
       */
       public function number()
       {
-          return new Response("hola5");
+          return new Response("hola6");
       }
 }
